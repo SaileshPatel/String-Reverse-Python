@@ -1,20 +1,18 @@
-program = True
-
-while program:
-	string = raw_input("Enter the string you wish to reverse:\n")
-	print string[::-1]
-	print "Please choose what you'd like to do:\n"
-	print "1: Restart the program"
-	print "2: Exit the program\n"
-	print "Enter the number:\n"
+keepProgramRunning = True
+while keepProgramRunning:
+	print "If you wish your reversed string to be printed in upper case letters, enter 1.\n"
+	print "If you wish your reversed string to be printed in lower case letters, enter 2."
 	choice = raw_input()
-
-	if choice == '1':
-		program = True
-
-	elif choice == '2':
-		print "Goodbye!"
-		program = False
-
+	if choice == "1":
+		print "Enter the string you wish to be reversed."
+		string = raw_input()
+		print string[::-1].upper()
+		keepProgramRunning = False
+	elif choice == "2":
+		print "Enter the string you wish to be reversed."
+		string = raw_input()
+		print string[::-1].lower()
+		keepProgramRunning = False
 	else:
-		print "Choose a valid option!!"
+		print "Enter a valid option.\n"
+		keepProgramRunning = True
